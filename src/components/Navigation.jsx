@@ -4,7 +4,7 @@ function Navigation() {
   return (
     <nav className="nav">
       <div className="nav-container">
-        <Link to="/" className="nav-logo">ZetaCube GPU</Link>
+        <Link to="/" className="nav-logo">ZetaCube</Link>
         <div className="nav-links">
           <Link to="/products">Products</Link>
           <Link to="/providers">Providers</Link>
