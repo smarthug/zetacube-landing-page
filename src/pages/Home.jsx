@@ -1,3 +1,6 @@
+import Button from '@mui/material/Button'
+import TextField from '@mui/material/TextField'
+
 function Home() {
   // Data arrays - easy to replace with API later
   const metrics = [
@@ -117,8 +120,12 @@ function Home() {
               Pay only for what you use, with no commitments or hidden fees.
             </p>
             <div className="hero-buttons">
-              <button className="btn-primary">Request Access</button>
-              <button className="btn-secondary">View Pricing</button>
+              <Button className="btn-primary" variant="contained" color="primary">
+                Request Access
+              </Button>
+              <Button className="btn-secondary" variant="outlined" color="inherit">
+                View Pricing
+              </Button>
             </div>
           </div>
           <div className="hero-visual">
@@ -167,7 +174,9 @@ function Home() {
                   <li key={j}>{spec}</li>
                 ))}
               </ul>
-              <button className="btn-secondary">Add to Queue</button>
+              <Button className="btn-secondary" variant="outlined" color="inherit">
+                Add to Queue
+              </Button>
             </div>
           ))}
         </div>
@@ -281,8 +290,36 @@ function Home() {
         <h2>Spin up distributed GPUs whenever you need them</h2>
         <p className="text-muted">Join the waitlist to get early access and exclusive launch pricing</p>
         <div className="cta-form">
-          <input type="email" placeholder="your@email.com" className="email-input" />
-          <button className="btn-primary">Join Waitlist</button>
+          <TextField
+            type="email"
+            placeholder="your@email.com"
+            variant="outlined"
+            fullWidth
+            sx={{
+              flex: 1,
+              '& .MuiOutlinedInput-root': {
+                borderRadius: '999px',
+                backgroundColor: 'transparent',
+                color: 'var(--muted)',
+                '& fieldset': { borderColor: 'var(--stroke)' },
+                '&:hover fieldset': { borderColor: 'var(--stroke-bright)' },
+                '&.Mui-focused fieldset': { borderColor: 'var(--accent)' }
+              },
+              '& .MuiInputBase-input': {
+                padding: '16px 24px'
+              }
+            }}
+            inputProps={{
+              sx: {
+                '::placeholder': {
+                  color: 'var(--muted-dark)'
+                }
+              }
+            }}
+          />
+          <Button className="btn-primary" variant="contained" color="primary">
+            Join Waitlist
+          </Button>
         </div>
       </section>
     </>

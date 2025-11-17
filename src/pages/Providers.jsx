@@ -1,3 +1,6 @@
+import Button from '@mui/material/Button'
+import TextField from '@mui/material/TextField'
+
 function Providers() {
   const providerStats = [
     { number: '150+', label: 'Active Providers', description: 'Globally distributed data centers' },
@@ -63,8 +66,12 @@ function Providers() {
             serving enterprise customers and researchers worldwide.
           </p>
           <div className="hero-buttons" style={{ justifyContent: 'center' }}>
-            <button className="btn-primary">Become a Provider</button>
-            <button className="btn-secondary">Provider Portal</button>
+            <Button className="btn-primary" variant="contained" color="primary">
+              Become a Provider
+            </Button>
+            <Button className="btn-secondary" variant="outlined" color="inherit">
+              Provider Portal
+            </Button>
           </div>
         </div>
       </section>
@@ -128,8 +135,36 @@ function Providers() {
         <h2>Ready to monetize your GPU infrastructure?</h2>
         <p className="text-muted">Apply to become a provider and start earning revenue from your idle capacity</p>
         <div className="cta-form">
-          <input type="email" placeholder="your@company.com" className="email-input" />
-          <button className="btn-primary">Apply Now</button>
+          <TextField
+            type="email"
+            placeholder="your@company.com"
+            variant="outlined"
+            fullWidth
+            sx={{
+              flex: 1,
+              '& .MuiOutlinedInput-root': {
+                borderRadius: '999px',
+                backgroundColor: 'transparent',
+                color: 'var(--muted)',
+                '& fieldset': { borderColor: 'var(--stroke)' },
+                '&:hover fieldset': { borderColor: 'var(--stroke-bright)' },
+                '&.Mui-focused fieldset': { borderColor: 'var(--accent)' }
+              },
+              '& .MuiInputBase-input': {
+                padding: '16px 24px'
+              }
+            }}
+            inputProps={{
+              sx: {
+                '::placeholder': {
+                  color: 'var(--muted-dark)'
+                }
+              }
+            }}
+          />
+          <Button className="btn-primary" variant="contained" color="primary">
+            Apply Now
+          </Button>
         </div>
       </section>
     </>

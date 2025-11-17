@@ -1,3 +1,5 @@
+import Button from '@mui/material/Button'
+
 function Company() {
   const timeline = [
     { year: '2023', event: 'ZetaCube founded', description: 'Started with mission to democratize GPU access' },
@@ -136,8 +138,12 @@ function Company() {
         <h2>Join us on our mission</h2>
         <p className="text-muted">We're always looking for talented people who share our vision</p>
         <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
-          <button className="btn-primary">View Open Positions</button>
-          <button className="btn-secondary">Contact Us</button>
+          <Button className="btn-primary" variant="contained" color="primary">
+            View Open Positions
+          </Button>
+          <Button className="btn-secondary" variant="outlined" color="inherit">
+            Contact Us
+          </Button>
         </div>
       </section>
     </>

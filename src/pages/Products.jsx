@@ -1,3 +1,5 @@
+import Button from '@mui/material/Button'
+
 function Products() {
   const products = [
     {
@@ -74,7 +76,9 @@ function Products() {
                   <li key={j}>{spec}</li>
                 ))}
               </ul>
-              <button className="btn-secondary">Configure Instance</button>
+              <Button className="btn-secondary" variant="outlined" color="inherit">
+                Configure Instance
+              </Button>
             </div>
           ))}
         </div>
