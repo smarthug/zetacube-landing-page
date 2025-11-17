@@ -224,10 +224,10 @@ function Home() {
           <tbody>
             {pricingRows.map((row, i) => (
               <tr key={i}>
-                <td>{row.offering}</td>
-                <td>{row.specs}</td>
-                <td><strong>{row.price}</strong></td>
-                <td className="text-muted">{row.notes}</td>
+                <td data-label="Offering">{row.offering}</td>
+                <td data-label="Specs">{row.specs}</td>
+                <td data-label="Price/hr"><strong>{row.price}</strong></td>
+                <td data-label="Notes" className="text-muted">{row.notes}</td>
               </tr>
             ))}
           </tbody>
