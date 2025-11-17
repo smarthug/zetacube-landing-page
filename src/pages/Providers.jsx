@@ -1,76 +1,27 @@
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
+import { useTranslation } from 'react-i18next'
 
 function Providers() {
-  const providerStats = [
-    { number: '150+', label: 'Active Providers', description: 'Globally distributed data centers' },
-    { number: '99.9%', label: 'Network Uptime', description: 'Guaranteed SLA with redundancy' },
-    { number: '45+', label: 'Countries', description: 'Providers across 6 continents' }
-  ]
-
-  const requirements = [
-    {
-      title: 'Infrastructure standards',
-      items: [
-        'Enterprise-grade data center facilities',
-        'Redundant power and cooling systems',
-        'High-speed network connectivity (10Gbps+)',
-        'Physical security and access controls'
-      ]
-    },
-    {
-      title: 'Performance requirements',
-      items: [
-        '99.5% minimum uptime commitment',
-        'Sub-50ms network latency within region',
-        'Regular hardware maintenance schedules',
-        'Automated monitoring and alerting'
-      ]
-    },
-    {
-      title: 'Compliance & security',
-      items: [
-        'SOC 2 Type II certification',
-        'ISO 27001 compliance',
-        'Data encryption at rest and in transit',
-        'Regular third-party security audits'
-      ]
-    }
-  ]
-
-  const benefits = [
-    {
-      icon: 'Revenue sharing',
-      title: 'Competitive revenue share',
-      description: 'Earn up to 85% of compute fees with transparent payment terms'
-    },
-    {
-      icon: 'Management',
-      title: 'Automated management',
-      description: 'Our platform handles provisioning, billing, and customer support'
-    },
-    {
-      icon: 'Utilization',
-      title: 'Maximize utilization',
-      description: 'Tap into global demand to keep your GPUs running at full capacity'
-    }
-  ]
+  const { t } = useTranslation()
+  const providerStats = t('providers.metrics', { returnObjects: true })
+  const requirements = t('providers.requirements', { returnObjects: true })
+  const benefits = t('providers.benefits', { returnObjects: true })
+  const testimonial = t('providers.testimonial', { returnObjects: true })
+  const finalCta = t('providers.finalCta', { returnObjects: true })
 
   return (
     <>
       <section className="hero">
         <div className="hero-text" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-          <h1>Join Our Provider Network</h1>
-          <p className="hero-subtitle">
-            Turn your idle GPU capacity into revenue. Join a global network of compute providers
-            serving enterprise customers and researchers worldwide.
-          </p>
+          <h1>{t('providers.heroTitle')}</h1>
+          <p className="hero-subtitle">{t('providers.heroDescription')}</p>
           <div className="hero-buttons" style={{ justifyContent: 'center' }}>
             <Button className="btn-primary" variant="contained" color="primary">
-              Become a Provider
+              {t('providers.heroPrimary')}
             </Button>
             <Button className="btn-secondary" variant="outlined" color="inherit">
-              Provider Portal
+              {t('providers.heroSecondary')}
             </Button>
           </div>
         </div>
@@ -89,7 +40,7 @@ function Providers() {
       </section>
 
       <section className="section">
-        <h2 className="section-title">Why providers choose ZetaCube</h2>
+        <h2 className="section-title">{t('providers.benefitTitle')}</h2>
         <div className="grid-3">
           {benefits.map((benefit, i) => (
             <div key={i} className="use-case-card">
@@ -102,7 +53,7 @@ function Providers() {
       </section>
 
       <section className="section">
-        <h2 className="section-title">Provider Requirements</h2>
+        <h2 className="section-title">{t('providers.requirementsTitle')}</h2>
         <div className="grid-3">
           {requirements.map((req, i) => (
             <div key={i} className="gpu-card">
@@ -120,24 +71,22 @@ function Providers() {
       <section className="section testimonial">
         <div className="testimonial-card">
           <p className="testimonial-quote">
-            "Joining ZetaCube's provider network was seamless. We went from application to first
-            revenue in under two weeks. The platform handles all customer management, letting us
-            focus on maintaining our infrastructure."
+            {testimonial.quote}
           </p>
           <div className="testimonial-author">
-            <strong>Sarah Martinez</strong>
-            <span className="text-muted">VP Operations, CloudGen Systems</span>
+            <strong>{testimonial.author}</strong>
+            <span className="text-muted">{testimonial.role}</span>
           </div>
         </div>
       </section>
 
       <section className="section final-cta">
-        <h2>Ready to monetize your GPU infrastructure?</h2>
-        <p className="text-muted">Apply to become a provider and start earning revenue from your idle capacity</p>
+        <h2>{finalCta.title}</h2>
+        <p className="text-muted">{finalCta.description}</p>
         <div className="cta-form">
           <TextField
             type="email"
-            placeholder="your@company.com"
+            placeholder={finalCta.placeholder}
             variant="outlined"
             fullWidth
             sx={{
@@ -163,7 +112,7 @@ function Providers() {
             }}
           />
           <Button className="btn-primary" variant="contained" color="primary">
-            Apply Now
+            {finalCta.button}
           </Button>
         </div>
       </section>

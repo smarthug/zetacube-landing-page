@@ -1,71 +1,44 @@
-import Button from '@mui/material/Button'
+import { useTranslation } from 'react-i18next'
 
 function Company() {
-  const timeline = [
-    { year: '2023', event: 'ZetaCube founded', description: 'Started with mission to democratize GPU access' },
-    { year: '2023 Q4', event: 'Beta launch', description: 'First 50 users onboarded to the platform' },
-    { year: '2024 Q1', event: 'Series A funding', description: 'Raised $15M to expand provider network' },
-    { year: '2024 Q2', event: 'Global expansion', description: 'Reached 100+ providers across 45 countries' },
-    { year: '2024 Q3', event: 'Enterprise tier', description: 'Launched dedicated support for large teams' }
-  ]
-
-  const team = [
-    { name: 'Jennifer Park', role: 'CEO & Co-founder', background: 'Ex-Google Cloud, Stanford CS' },
-    { name: 'Michael Chen', role: 'CTO & Co-founder', background: 'Ex-AWS, MIT CSAIL' },
-    { name: 'Sarah Johnson', role: 'VP Engineering', background: 'Ex-Databricks, Berkeley PhD' },
-    { name: 'David Kim', role: 'VP Operations', background: 'Ex-DigitalOcean, Cornell MBA' }
-  ]
-
-  const values = [
-    {
-      title: 'Transparency',
-      description: 'Clear pricing, open communication, and honest about our capabilities and limitations'
-    },
-    {
-      title: 'Accessibility',
-      description: 'Making powerful GPU compute available to everyone, from students to enterprises'
-    },
-    {
-      title: 'Reliability',
-      description: 'Building infrastructure you can depend on for mission-critical workloads'
-    },
-    {
-      title: 'Innovation',
-      description: 'Continuously improving our platform with cutting-edge technology and features'
-    }
-  ]
+  const { t } = useTranslation()
+  const timeline = t('company.timeline', { returnObjects: true })
+  const team = t('company.team', { returnObjects: true })
+  const values = t('company.values', { returnObjects: true })
+  const storyParagraphs = t('company.storyParagraphs', { returnObjects: true })
+  const testimonial = t('company.testimonial', { returnObjects: true })
+  const finalCta = t('company.finalCta', { returnObjects: true })
 
   return (
     <>
       <section className="hero">
         <div className="hero-text" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-          <h1>About ZetaCube</h1>
-          <p className="hero-subtitle">
-            We're building the future of distributed GPU computing. Our mission is to make
-            high-performance compute accessible, affordable, and reliable for everyone.
-          </p>
+          <h1>{t('company.heroTitle')}</h1>
+          <p className="hero-subtitle">{t('company.heroDescription')}</p>
         </div>
       </section>
 
       <section className="section">
-        <h2 className="section-title">Our Story</h2>
+        <h2 className="section-title">{t('company.storyTitle')}</h2>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#555', marginBottom: '24px' }}>
-            ZetaCube was founded in 2023 by a team of cloud infrastructure veterans who experienced
-            firsthand the challenges of accessing affordable GPU compute. We saw researchers waiting
-            weeks for GPU allocations, startups burning through runway on cloud bills, and data centers
-            with idle capacity unable to monetize their infrastructure.
-          </p>
-          <p style={{ fontSize: '16px', lineHeight: '1.8', color: '#555' }}>
-            Our platform connects these dots—creating a global marketplace where anyone can access
-            high-performance GPUs instantly, while providers earn revenue from their existing infrastructure.
-            Today, we serve thousands of developers, researchers, and companies worldwide.
-          </p>
+          {storyParagraphs.map((paragraph, index) => (
+            <p
+              key={index}
+              style={{
+                fontSize: '16px',
+                lineHeight: '1.8',
+                color: '#555',
+                marginBottom: index < storyParagraphs.length - 1 ? '24px' : '0'
+              }}
+            >
+              {paragraph}
+            </p>
+          ))}
         </div>
       </section>
 
       <section className="section">
-        <h2 className="section-title">Our Values</h2>
+        <h2 className="section-title">{t('company.valuesTitle')}</h2>
         <div className="grid-3">
           {values.map((value, i) => (
             <div key={i} className="use-case-card">
@@ -78,23 +51,20 @@ function Company() {
       </section>
 
       <section className="section">
-        <h2 className="section-title">Company Timeline</h2>
+        <h2 className="section-title">{t('company.timelineTitle')}</h2>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           {timeline.map((item, i) => (
-            <div key={i} style={{
-              display: 'flex',
-              gap: '24px',
-              marginBottom: '32px',
-              paddingBottom: '32px',
-              borderBottom: i < timeline.length - 1 ? '1px solid #e9e9e9' : 'none'
-            }}>
-              <div style={{
-                minWidth: '100px',
-                fontWeight: '600',
-                fontSize: '16px'
-              }}>
-                {item.year}
-              </div>
+            <div
+              key={i}
+              style={{
+                display: 'flex',
+                gap: '24px',
+                marginBottom: '32px',
+                paddingBottom: '32px',
+                borderBottom: i < timeline.length - 1 ? '1px solid #e9e9e9' : 'none'
+              }}
+            >
+              <div style={{ minWidth: '100px', fontWeight: 600, fontSize: '16px' }}>{item.year}</div>
               <div>
                 <h4 style={{ fontSize: '18px', marginBottom: '8px' }}>{item.event}</h4>
                 <p className="text-muted">{item.description}</p>
@@ -105,15 +75,13 @@ function Company() {
       </section>
 
       <section className="section">
-        <h2 className="section-title">Leadership Team</h2>
+        <h2 className="section-title">{t('company.teamTitle')}</h2>
         <div className="grid-3">
           {team.map((member, i) => (
             <div key={i} className="metric-card" style={{ textAlign: 'left' }}>
               <div className="use-case-icon" style={{ margin: '0 0 16px 0' }}></div>
               <h3 style={{ fontSize: '18px', marginBottom: '4px' }}>{member.name}</h3>
-              <div style={{ fontSize: '15px', fontWeight: '600', marginBottom: '8px', color: '#555' }}>
-                {member.role}
-              </div>
+              <div style={{ fontSize: '15px', fontWeight: 600, marginBottom: '8px', color: '#555' }}>{member.role}</div>
               <p className="text-muted" style={{ fontSize: '14px' }}>{member.background}</p>
             </div>
           ))}
@@ -122,28 +90,20 @@ function Company() {
 
       <section className="section testimonial">
         <div className="testimonial-card">
-          <p className="testimonial-quote">
-            "Our goal is to eliminate the barriers between great ideas and the compute power needed
-            to bring them to life. Every researcher, developer, and company should have access to
-            the GPUs they need, when they need them, at a fair price."
-          </p>
+          <p className="testimonial-quote">{testimonial.quote}</p>
           <div className="testimonial-author">
-            <strong>Jennifer Park</strong>
-            <span className="text-muted">CEO & Co-founder, ZetaCube</span>
+            <strong>{testimonial.author}</strong>
+            <span className="text-muted">{testimonial.role}</span>
           </div>
         </div>
       </section>
 
       <section className="section final-cta">
-        <h2>Join us on our mission</h2>
-        <p className="text-muted">We're always looking for talented people who share our vision</p>
+        <h2>{finalCta.title}</h2>
+        <p className="text-muted">{finalCta.description}</p>
         <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
-          <Button className="btn-primary" variant="contained" color="primary">
-            View Open Positions
-          </Button>
-          <Button className="btn-secondary" variant="outlined" color="inherit">
-            Contact Us
-          </Button>
+          <button className="btn-primary">{finalCta.primary}</button>
+          <button className="btn-secondary">{finalCta.secondary}</button>
         </div>
       </section>
     </>

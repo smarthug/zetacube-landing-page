@@ -1,0 +1,478 @@
+{
+  "languageNames": {
+    "en": "EN",
+    "ko": "KO"
+  },
+  "nav": {
+    "logo": "ZetaCube",
+    "links": {
+      "products": "Products",
+      "providers": "Providers",
+      "documentation": "Documentation",
+      "company": "Company"
+    },
+    "cta": "Request Access",
+    "language": "Language"
+  },
+  "footer": {
+    "tagline": "Distributed GPU compute for everyone",
+    "links": {
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "contact": "Contact"
+    },
+    "copyright": "© 2024 ZetaCube. All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Deterministic pricing • distributed GPU fabric",
+      "title": "Launch GPUs in seconds at 80% lower cost",
+      "description": "Access distributed H100, A100, and L40S capacity across vetted providers. Pay only for the compute you use with transparent, deterministic rates.",
+      "primaryCta": "Request Access",
+      "secondaryCta": "View Pricing"
+    },
+    "heroCards": [
+      {
+        "title": "GPU Queue",
+        "subtitle": "Provisioned",
+        "content": [
+          { "label": "H100 SXM5", "value": "4 nodes" },
+          { "label": "Region", "value": "us-west-2" }
+        ],
+        "progress": 76
+      },
+      {
+        "title": "Savings vs. Cloud",
+        "subtitle": "Last 30 days",
+        "highlight": "82% lower cost",
+        "caption": "12,480 GPU hours compared"
+      },
+      {
+        "title": "Live capacity",
+        "chips": ["H100", "A100", "L40S", "RTX 4090"],
+        "caption": "Inventory refreshes every 30 seconds"
+      }
+    ],
+    "trustTag": "Trusted by distributed GPU providers",
+    "trustLogos": ["DataCore AI", "RenderFarm Pro", "ML Institute", "Vertex Labs", "CloudGen Systems", "Neural Works"],
+    "metrics": [
+      { "number": "80%", "label": "Average Savings", "description": "compared to traditional cloud GPU pricing" },
+      { "number": "<2 min", "label": "Launch Time", "description": "from request to ready workload" },
+      { "number": "150+", "label": "Active Providers", "description": "distributed across our global network" }
+    ],
+    "gpuTitle": "GPU offerings",
+    "gpuCta": "Add to queue",
+    "gpuPlans": [
+      {
+        "name": "H100 PCIe",
+        "price": "$2.49/hr",
+        "status": "Available",
+        "statusVariant": "available",
+        "specs": ["80GB HBM3 Memory", "3.35 TB/s Bandwidth", "PCIe Gen5 Interface", "FP8 Tensor Cores"]
+      },
+      {
+        "name": "A100 80GB",
+        "price": "$1.89/hr",
+        "status": "Queued",
+        "statusVariant": "queued",
+        "specs": ["80GB HBM2e Memory", "2 TB/s Bandwidth", "SXM4 Interface", "TF32 Precision"]
+      },
+      {
+        "name": "L40S",
+        "price": "$0.99/hr",
+        "status": "Available",
+        "statusVariant": "available",
+        "specs": ["48GB GDDR6 Memory", "864 GB/s Bandwidth", "PCIe Gen4 Interface", "Ada Lovelace Arch"]
+      }
+    ],
+    "workflowTitle": "How it works",
+    "workflow": [
+      {
+        "number": "01",
+        "title": "Select GPUs",
+        "description": "Choose from H100, A100, L40S, and more based on your workload requirements."
+      },
+      {
+        "number": "02",
+        "title": "Configure containers",
+        "description": "Bring your own Docker image or use prebuilt ML runtimes with secrets + volumes."
+      },
+      {
+        "number": "03",
+        "title": "Launch workloads",
+        "description": "Deploy instantly on our distributed network with deterministic pricing."
+      },
+      {
+        "number": "04",
+        "title": "Monitor & scale",
+        "description": "Track utilization, autoscale fleets, and export telemetry to your stack."
+      }
+    ],
+    "featureSection": {
+      "title": "Built for developers and researchers",
+      "description": "No vendor lock-in, no capacity constraints. Spin up compute when you need it and scale down when you don't. Full transparency on pricing, latency, and provider performance.",
+      "items": [
+        {
+          "title": "Deterministic pricing",
+          "description": "Transparent hourly rates with no egress fees. Billing per-minute with no minimums."
+        },
+        {
+          "title": "Provider choice",
+          "description": "Filter by geography, latency, or sustainability metrics to match your workloads."
+        },
+        {
+          "title": "Launch-ready tooling",
+          "description": "CLI, API, and Terraform modules plus container registry mirroring and observability hooks."
+        }
+      ]
+    },
+    "pricingSection": {
+      "title": "Pricing comparison",
+      "columns": {
+        "offering": "Offering",
+        "specs": "Specs",
+        "price": "Price/hr",
+        "notes": "Notes",
+        "savings": "Savings"
+      },
+      "rows": [
+        {
+          "offering": "Fluence GPU Network",
+          "specs": "H100 80GB SXM5",
+          "price": "$2.49/hr",
+          "notes": "No commitment, instant access",
+          "savings": "-80%"
+        },
+        {
+          "offering": "Traditional Cloud",
+          "specs": "H100 80GB",
+          "price": "$4.50–$8.00/hr",
+          "notes": "Long-term contracts often required",
+          "savings": "—"
+        },
+        {
+          "offering": "Bare-metal brokers",
+          "specs": "H100 80GB",
+          "price": "$3.50–$6.00/hr",
+          "notes": "Limited availability, manual onboarding",
+          "savings": "-30%"
+        }
+      ]
+    },
+    "useCases": {
+      "title": "Use cases",
+      "items": [
+        {
+          "title": "Generative AI",
+          "description": "Train large multimodal models on elastic H100 clusters without idle spend."
+        },
+        {
+          "title": "Fine-tuning",
+          "description": "Spin up short-lived experiments and scale to production without rebuilding infra."
+        },
+        {
+          "title": "Rendering & simulation",
+          "description": "Burst render farms or physics workloads across globally distributed GPUs."
+        }
+      ]
+    },
+    "testimonial": {
+      "quote": "\u201CWe reduced GPU spend by 70% while maintaining throughput. The distributed network gave us capacity we couldn't get from traditional clouds during peak demand.\u201D",
+      "name": "Alex Chen",
+      "role": "ML Engineering Lead, Vertex Labs"
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "description": "Everything you need to know about pricing, providers, and launching your workloads on the Fluence GPU fabric.",
+      "items": [
+        {
+          "question": "How does deterministic pricing work?",
+          "answer": "Every GPU SKU has a fixed hourly rate regardless of utilization. Billing is per-minute and you only pay for successful compute time."
+        },
+        {
+          "question": "What providers power the network?",
+          "answer": "We aggregate vetted data centers and independent operators that pass redundancy, compliance, and performance benchmarks."
+        },
+        {
+          "question": "Can I bring my own containers?",
+          "answer": "Yes. Deploy any Docker image via our registry proxy or attach prebuilt ML frameworks with secrets, datasets, and accelerators."
+        },
+        {
+          "question": "What happens if a provider goes offline?",
+          "answer": "Fleet policies automatically migrate workloads to backup providers. You are never billed for failed runs and can enforce redundancy."
+        }
+      ]
+    },
+    "finalCta": {
+      "title": "Spin up distributed GPUs whenever you need them",
+      "description": "Join the waitlist to get early access, exclusive launch pricing, and hands-on help with your first workloads.",
+      "button": "Join waitlist",
+      "placeholder": "your@email.com"
+    }
+  },
+  "products": {
+    "heroTitle": "GPU Products",
+    "heroDescription": "Choose from our range of high-performance GPUs optimized for machine learning, rendering, and compute-intensive workloads. All available on-demand with transparent pricing.",
+    "gridTitle": "Available GPUs",
+    "cta": "Configure Instance",
+    "sectionTitle": "Flexible deployment options",
+    "sectionDescription": "All GPUs are available with hourly billing, instant provisioning, and the ability to scale up or down based on your needs. Switch between GPU types without long-term commitments.",
+    "featureCards": [
+      {
+        "title": "Instant provisioning",
+        "description": "Launch any GPU configuration in under 2 minutes"
+      },
+      {
+        "title": "No minimum commitment",
+        "description": "Pay only for the hours you use, cancel anytime"
+      },
+      {
+        "title": "API access",
+        "description": "Automate deployments with our REST API and SDKs"
+      }
+    ],
+    "items": [
+      {
+        "name": "H100 PCIe 80GB",
+        "category": "High Performance",
+        "price": "$2.49/hr",
+        "description": "Top-tier performance for large language model training and inference workloads",
+        "specs": ["80GB HBM3 Memory", "3.35 TB/s Memory Bandwidth", "PCIe Gen5 Interface", "FP8 Tensor Cores", "3.9 petaFLOPS FP8"]
+      },
+      {
+        "name": "A100 80GB SXM",
+        "category": "High Performance",
+        "price": "$1.89/hr",
+        "description": "Industry-standard GPU for deep learning training and HPC applications",
+        "specs": ["80GB HBM2e Memory", "2 TB/s Memory Bandwidth", "SXM4 Interface", "TF32 Precision", "312 teraFLOPS"]
+      },
+      {
+        "name": "L40S",
+        "category": "Graphics & AI",
+        "price": "$0.99/hr",
+        "description": "Versatile GPU for AI inference, rendering, and graphics workloads",
+        "specs": ["48GB GDDR6 Memory", "864 GB/s Memory Bandwidth", "PCIe Gen4 Interface", "Ada Lovelace Arch", "RT Cores Gen 3"]
+      },
+      {
+        "name": "RTX 4090",
+        "category": "Consumer",
+        "price": "$0.59/hr",
+        "description": "Cost-effective option for smaller models and experimentation",
+        "specs": ["24GB GDDR6X Memory", "1008 GB/s Memory Bandwidth", "PCIe Gen4 Interface", "Ada Lovelace Arch", "DLSS 3"]
+      },
+      {
+        "name": "A40",
+        "category": "Professional",
+        "price": "$0.89/hr",
+        "description": "Professional GPU for virtual workstations and AI development",
+        "specs": ["48GB GDDR6 Memory", "696 GB/s Memory Bandwidth", "PCIe Gen4 Interface", "Ampere Arch", "ECC Memory"]
+      },
+      {
+        "name": "V100 32GB",
+        "category": "Legacy",
+        "price": "$0.69/hr",
+        "description": "Proven solution for established ML workflows and research",
+        "specs": ["32GB HBM2 Memory", "900 GB/s Memory Bandwidth", "SXM2 Interface", "Volta Arch", "Tensor Cores Gen 1"]
+      }
+    ]
+  },
+  "providers": {
+    "heroTitle": "Join Our Provider Network",
+    "heroDescription": "Turn your idle GPU capacity into revenue. Join a global network of compute providers serving enterprise customers and researchers worldwide.",
+    "heroPrimary": "Become a Provider",
+    "heroSecondary": "Provider Portal",
+    "metrics": [
+      { "number": "150+", "label": "Active Providers", "description": "Globally distributed data centers" },
+      { "number": "99.9%", "label": "Network Uptime", "description": "Guaranteed SLA with redundancy" },
+      { "number": "45+", "label": "Countries", "description": "Providers across 6 continents" }
+    ],
+    "benefitTitle": "Why providers choose ZetaCube",
+    "benefits": [
+      {
+        "title": "Competitive revenue share",
+        "description": "Earn up to 85% of compute fees with transparent payment terms"
+      },
+      {
+        "title": "Automated management",
+        "description": "Our platform handles provisioning, billing, and customer support"
+      },
+      {
+        "title": "Maximize utilization",
+        "description": "Tap into global demand to keep your GPUs running at full capacity"
+      }
+    ],
+    "requirementsTitle": "Provider Requirements",
+    "requirements": [
+      {
+        "title": "Infrastructure standards",
+        "items": [
+          "Enterprise-grade data center facilities",
+          "Redundant power and cooling systems",
+          "High-speed network connectivity (10Gbps+)",
+          "Physical security and access controls"
+        ]
+      },
+      {
+        "title": "Performance requirements",
+        "items": [
+          "99.5% minimum uptime commitment",
+          "Sub-50ms network latency within region",
+          "Regular hardware maintenance schedules",
+          "Automated monitoring and alerting"
+        ]
+      },
+      {
+        "title": "Compliance & security",
+        "items": [
+          "SOC 2 Type II certification",
+          "ISO 27001 compliance",
+          "Data encryption at rest and in transit",
+          "Regular third-party security audits"
+        ]
+      }
+    ],
+    "testimonial": {
+      "quote": "\u201CJoining ZetaCube's provider network was seamless. We went from application to first revenue in under two weeks. The platform handles all customer management, letting us focus on maintaining our infrastructure.\u201D",
+      "author": "Sarah Martinez",
+      "role": "VP Operations, CloudGen Systems"
+    },
+    "finalCta": {
+      "title": "Ready to monetize your GPU infrastructure?",
+      "description": "Apply to become a provider and start earning revenue from your idle capacity",
+      "button": "Apply Now",
+      "placeholder": "your@company.com"
+    }
+  },
+  "documentation": {
+    "heroTitle": "Documentation",
+    "heroDescription": "Everything you need to get started with ZetaCube GPU. From quick start guides to advanced topics and API references.",
+    "quickStartTitle": "Quick Start",
+    "quickStartSteps": [
+      {
+        "title": "Install CLI",
+        "code": "npm install -g zetacube-cli",
+        "description": "Install the ZetaCube command-line tool globally"
+      },
+      {
+        "title": "Authenticate",
+        "code": "zetacube auth login",
+        "description": "Log in with your ZetaCube account credentials"
+      },
+      {
+        "title": "Launch GPU",
+        "code": "zetacube launch --gpu h100 --image pytorch/pytorch:latest",
+        "description": "Start a GPU instance with your preferred configuration"
+      }
+    ],
+    "sectionsTitle": "Documentation Sections",
+    "sections": [
+      {
+        "title": "Getting Started",
+        "items": ["Quick Start Guide", "Installation", "Authentication", "First GPU Launch", "Basic Concepts"]
+      },
+      {
+        "title": "Core Features",
+        "items": ["GPU Selection", "Container Management", "Storage & Volumes", "Networking", "Cost Optimization"]
+      },
+      {
+        "title": "API Reference",
+        "items": ["REST API", "Python SDK", "Node.js SDK", "CLI Commands", "Authentication"]
+      },
+      {
+        "title": "Advanced Topics",
+        "items": ["Multi-GPU Workloads", "Auto-scaling", "Provider Selection", "Custom Images", "Monitoring"]
+      },
+      {
+        "title": "Frameworks",
+        "items": ["PyTorch", "TensorFlow", "JAX", "Hugging Face", "Ray"]
+      },
+      {
+        "title": "Resources",
+        "items": ["Tutorials", "Best Practices", "Troubleshooting", "FAQ", "Community Forum"]
+      }
+    ],
+    "examplesTitle": "Code Examples",
+    "examples": [
+      {
+        "title": "Python SDK",
+        "code": "from zetacube import Client\n\nclient = Client(api_key=\"your_api_key\")\n\n# Launch H100 GPU instance\ninstance = client.launch(\n    gpu=\"h100\",\n    image=\"pytorch/pytorch:latest\",\n    command=\"python train.py\"\n)\n\nprint(f\"Instance ID: {instance.id}\")\nprint(f\"Status: {instance.status}\")",
+        "description": ""
+      },
+      {
+        "title": "REST API",
+        "code": "curl -X POST https://api.zetacube.com/v1/instances \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"gpu\": \"h100\",\n    \"image\": \"pytorch/pytorch:latest\",\n    \"command\": \"python train.py\"\n  }'",
+        "description": ""
+      }
+    ],
+    "helpTitle": "Need help?",
+    "helpDescription": "Our documentation is continuously updated with new guides, tutorials, and examples. Can't find what you're looking for? Reach out to our support team or join the community forum.",
+    "helpCards": [
+      {
+        "title": "Community Forum",
+        "description": "Get help from other developers and share your experiences"
+      },
+      {
+        "title": "Support Tickets",
+        "description": "Direct assistance from our technical support team"
+      },
+      {
+        "title": "Discord Community",
+        "description": "Real-time chat with developers and ZetaCube engineers"
+      }
+    ]
+  },
+  "company": {
+    "heroTitle": "About ZetaCube",
+    "heroDescription": "We're building the future of distributed GPU computing. Our mission is to make high-performance compute accessible, affordable, and reliable for everyone.",
+    "storyTitle": "Our Story",
+    "storyParagraphs": [
+      "ZetaCube was founded in 2023 by a team of cloud infrastructure veterans who experienced firsthand the challenges of accessing affordable GPU compute. We saw researchers waiting weeks for GPU allocations, startups burning through runway on cloud bills, and data centers with idle capacity unable to monetize their infrastructure.",
+      "Our platform connects these dots—creating a global marketplace where anyone can access high-performance GPUs instantly, while providers earn revenue from their existing infrastructure. Today, we serve thousands of developers, researchers, and companies worldwide."
+    ],
+    "valuesTitle": "Our Values",
+    "values": [
+      {
+        "title": "Transparency",
+        "description": "Clear pricing, open communication, and honest about our capabilities and limitations"
+      },
+      {
+        "title": "Accessibility",
+        "description": "Making powerful GPU compute available to everyone, from students to enterprises"
+      },
+      {
+        "title": "Reliability",
+        "description": "Building infrastructure you can depend on for mission-critical workloads"
+      },
+      {
+        "title": "Innovation",
+        "description": "Continuously improving our platform with cutting-edge technology and features"
+      }
+    ],
+    "timelineTitle": "Company Timeline",
+    "timeline": [
+      {"year": "2023", "event": "ZetaCube founded", "description": "Started with mission to democratize GPU access"},
+      {"year": "2023 Q4", "event": "Beta launch", "description": "First 50 users onboarded to the platform"},
+      {"year": "2024 Q1", "event": "Series A funding", "description": "Raised $15M to expand provider network"},
+      {"year": "2024 Q2", "event": "Global expansion", "description": "Reached 100+ providers across 45 countries"},
+      {"year": "2024 Q3", "event": "Enterprise tier", "description": "Launched dedicated support for large teams"}
+    ],
+    "teamTitle": "Leadership Team",
+    "team": [
+      {"name": "Jennifer Park", "role": "CEO & Co-founder", "background": "Ex-Google Cloud, Stanford CS"},
+      {"name": "Michael Chen", "role": "CTO & Co-founder", "background": "Ex-AWS, MIT CSAIL"},
+      {"name": "Sarah Johnson", "role": "VP Engineering", "background": "Ex-Databricks, Berkeley PhD"},
+      {"name": "David Kim", "role": "VP Operations", "background": "Ex-DigitalOcean, Cornell MBA"}
+    ],
+    "testimonial": {
+      "quote": "\u201COur goal is to eliminate the barriers between great ideas and the compute power needed to bring them to life. Every researcher, developer, and company should have access to the GPUs they need, when they need them, at a fair price.\u201D",
+      "author": "Jennifer Park",
+      "role": "CEO & Co-founder, ZetaCube"
+    },
+    "finalCta": {
+      "title": "Join us on our mission",
+      "description": "We're always looking for talented people who share our vision",
+      "primary": "View Open Positions",
+      "secondary": "Contact Us"
+    }
+  }
+}

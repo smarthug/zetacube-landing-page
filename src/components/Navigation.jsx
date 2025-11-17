@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Button from '@mui/material/Button'
@@ -14,21 +15,24 @@ import ListItemButton from '@mui/material/ListItemButton'
 import ListItemText from '@mui/material/ListItemText'
 import Divider from '@mui/material/Divider'
 import Box from '@mui/material/Box'
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
+import ToggleButton from '@mui/material/ToggleButton'
 import { useTheme } from '@mui/material/styles'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
 
 function Navigation() {
+  const { t, i18n } = useTranslation()
   const [mobileOpen, setMobileOpen] = useState(false)
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
   const navLinks = [
-    { label: 'Products', to: '/products' },
-    { label: 'Providers', to: '/providers' },
-    { label: 'Documentation', to: '/documentation' },
-    { label: 'Company', to: '/company' }
+    { label: t('nav.links.products'), to: '/products' },
+    { label: t('nav.links.providers'), to: '/providers' },
+    { label: t('nav.links.documentation'), to: '/documentation' },
+    { label: t('nav.links.company'), to: '/company' }
   ]
 
   const toggleDrawer = () => {
@@ -59,7 +63,7 @@ function Navigation() {
           }}
           onClick={() => setMobileOpen(false)}
         >
-          ZetaCube
+          {t('nav.logo')}
         </Typography>
         <IconButton onClick={toggleDrawer} aria-label="Close navigation" sx={{ color: '#fff' }}>
           <CloseRoundedIcon />
@@ -98,7 +102,7 @@ function Navigation() {
         fullWidth
         onClick={() => setMobileOpen(false)}
       >
-        Request Access
+        {t('nav.cta')}
       </Button>
     </Box>
   )
@@ -135,7 +139,7 @@ function Navigation() {
               color: '#fff'
             }}
           >
-            ZetaCube
+            {t('nav.logo')}
           </Typography>
           <Stack
             direction="row"
@@ -165,6 +169,32 @@ function Navigation() {
             ))}
           </Stack>
           <Stack direction="row" spacing={1.5} alignItems="center">
+            <ToggleButtonGroup
+              exclusive
+              size="small"
+              value={i18n.language.startsWith('ko') ? 'ko' : 'en'}
+              onChange={(_, value) => {
+                if (value) {
+                  i18n.changeLanguage(value)
+                }
+              }}
+              sx={{
+                backgroundColor: 'rgba(255,255,255,0.05)',
+                borderRadius: '999px',
+                '& .MuiToggleButton-root': {
+                  color: 'rgba(255,255,255,0.7)',
+                  border: 'none',
+                  px: 1.5,
+                  '&.Mui-selected': {
+                    color: '#010616',
+                    backgroundColor: theme.palette.primary.main
+                  }
+                }
+              }}
+            >
+              <ToggleButton value="en">{t('languageNames.en')}</ToggleButton>
+              <ToggleButton value="ko">{t('languageNames.ko')}</ToggleButton>
+            </ToggleButtonGroup>
             <Button
               component={RouterLink}
               to="/contact"
@@ -172,7 +202,7 @@ function Navigation() {
               color="primary"
               sx={{ display: { xs: 'none', md: 'inline-flex' } }}
             >
-              Request Access
+              {t('nav.cta')}
             </Button>
             {isMobile && (
               <IconButton onClick={toggleDrawer} aria-label="Open navigation" sx={{ color: '#fff' }}>
