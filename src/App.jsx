@@ -7,12 +7,14 @@ import Providers from './pages/Providers'
 import Documentation from './pages/Documentation'
 import Company from './pages/Company'
 import './App.css'
+import { Container } from '@mui/material'
 
 function App() {
   return (
     <Router>
       <div className="page">
         <Navigation />
+        <Container>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
@@ -21,6 +23,7 @@ function App() {
           <Route path="/company" element={<Company />} />
         </Routes>
         <Footer />
+        </Container>
       </div>
     </Router>
   )
