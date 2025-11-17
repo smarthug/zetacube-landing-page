@@ -1,112 +1,24 @@
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
+import { useTranslation } from 'react-i18next'
 
 function Home() {
-  // Data arrays - easy to replace with API later
-  const metrics = [
-    { number: '80%', label: 'Average Savings', description: 'compared to traditional cloud GPU pricing' },
-    { number: '<2min', label: 'Launch Time', description: 'from request to ready workload' },
-    { number: '150+', label: 'Active Providers', description: 'distributed across global network' }
-  ]
+  const { t } = useTranslation()
 
-  const gpuPlans = [
-    {
-      name: 'H100 PCIe',
-      specs: ['80GB HBM3 Memory', '3.35 TB/s Memory Bandwidth', 'PCIe Gen5 Interface', 'FP8 Tensor Cores'],
-      price: '$2.49/hr'
-    },
-    {
-      name: 'A100 80GB',
-      specs: ['80GB HBM2e Memory', '2 TB/s Memory Bandwidth', 'SXM4 Interface', 'TF32 Precision'],
-      price: '$1.89/hr'
-    },
-    {
-      name: 'L40S',
-      specs: ['48GB GDDR6 Memory', '864 GB/s Memory Bandwidth', 'PCIe Gen4 Interface', 'Ada Lovelace Arch'],
-      price: '$0.99/hr'
-    }
-  ]
-
-  const workflowSteps = [
-    {
-      number: 1,
-      title: 'Select GPU',
-      description: 'Choose from H100, A100, L40S, and more based on your workload requirements'
-    },
-    {
-      number: 2,
-      title: 'Configure container',
-      description: 'Bring your own Docker image or use pre-configured ML frameworks'
-    },
-    {
-      number: 3,
-      title: 'Launch workload',
-      description: 'Deploy instantly on distributed network, pay only for usage time'
-    }
-  ]
-
-  const features = [
-    { title: 'Usage-based billing', description: 'Pay only for the compute time you use, down to the minute' },
-    { title: 'Provider choice', description: 'Select from vetted providers based on price, location, and specs' },
-    { title: 'Deterministic pricing', description: 'No hidden fees or surprise charges, transparent cost structure' }
-  ]
-
-  const pricingRows = [
-    {
-      offering: 'Fluence GPU Network',
-      specs: 'H100 80GB SXM',
-      price: '$2.49/hr',
-      notes: 'No commitment, instant access'
-    },
-    {
-      offering: 'Traditional Cloud',
-      specs: 'H100 80GB',
-      price: '$4.50-$8.00/hr',
-      notes: 'Long-term contracts often required'
-    },
-    {
-      offering: 'Bare-metal brokers',
-      specs: 'H100 80GB',
-      price: '$3.50-$6.00/hr',
-      notes: 'Limited availability, manual onboarding'
-    }
-  ]
-
-  const useCases = [
-    {
-      title: 'Generative AI',
-      description: 'Train and deploy LLMs, diffusion models, and multimodal AI applications with high-bandwidth GPU access'
-    },
-    {
-      title: 'Fine-tuning',
-      description: 'Adapt foundation models to your specific domain with cost-efficient distributed compute resources'
-    },
-    {
-      title: 'Rendering',
-      description: 'Accelerate 3D rendering, simulation, and video processing workloads on professional GPUs'
-    }
-  ]
-
-  const faqItems = [
-    {
-      question: 'How does distributed GPU pricing work?',
-      answer: 'You pay only for the actual GPU time you consume, billed per minute. No upfront costs, no monthly minimums, no long-term contracts required.'
-    },
-    {
-      question: 'What providers power the network?',
-      answer: 'ZetaCube aggregates capacity from vetted data centers and independent providers globally. Each provider meets strict uptime and performance SLAs.'
-    },
-    {
-      question: 'Can I bring my own Docker containers?',
-      answer: 'Yes, you can deploy any containerized workload. We support custom images from Docker Hub, private registries, or prebuilt ML frameworks.'
-    },
-    {
-      question: 'What happens if a provider goes offline?',
-      answer: 'Workloads can be configured to auto-migrate to backup providers. You only pay for successful compute time, ensuring reliability and cost efficiency.'
-    }
-  ]
-
-  const trustLogos = ['DataCore AI', 'RenderFarm Pro', 'ML Institute', 'Vertex Labs', 'CloudGen Systems', 'Neural Works']
+  // Data arrays from translations
+  const metrics = t('home.metrics', { returnObjects: true })
+  const gpuPlans = t('home.gpuPlans', { returnObjects: true })
+  const workflowSteps = t('home.workflow', { returnObjects: true })
+  const features = t('home.featureSection.items', { returnObjects: true })
+  const pricingRows = t('home.pricingSection.rows', { returnObjects: true })
+  const useCases = t('home.useCases.items', { returnObjects: true })
+  const faqItems = t('home.faq.items', { returnObjects: true })
+  const trustLogos = t('home.trustLogos', { returnObjects: true })
+  const testimonial = {
+    quote: t('home.testimonial.quote'),
+    author: t('home.testimonial.name'),
+    role: t('home.testimonial.role')
+  }
 
   return (
     <>
@@ -114,17 +26,16 @@ function Home() {
       <section className="hero">
         <div className="hero-content">
           <div className="hero-text">
-            <h1>Launch GPUs in seconds at 80% lower cost</h1>
+            <h1>{t('home.hero.title')}</h1>
             <p className="hero-subtitle">
-              Access distributed H100, A100, and L40S GPUs from a global network of providers.
-              Pay only for what you use, with no commitments or hidden fees.
+              {t('home.hero.description')}
             </p>
             <div className="hero-buttons">
               <Button className="btn-primary" variant="contained" color="primary">
-                Request Access
+                {t('home.hero.primaryCta')}
               </Button>
               <Button className="btn-secondary" variant="outlined" color="inherit">
-                View Pricing
+                {t('home.hero.secondaryCta')}
               </Button>
             </div>
           </div>
@@ -140,7 +51,7 @@ function Home() {
 
       {/* Trust bar */}
       <section className="trust-bar">
-        <p className="text-muted">Trusted by distributed GPU providers</p>
+        <p className="text-muted">{t('home.trustTag')}</p>
         <div className="trust-logos">
           {trustLogos.map((logo, i) => (
             <div key={i} className="trust-logo">{logo}</div>
@@ -163,7 +74,7 @@ function Home() {
 
       {/* GPU catalog */}
       <section className="section gpu-catalog">
-        <h2 className="section-title">GPU Offerings</h2>
+        <h2 className="section-title">{t('home.gpuTitle')}</h2>
         <div className="grid-3">
           {gpuPlans.map((plan, i) => (
             <div key={i} className="gpu-card">
@@ -175,7 +86,7 @@ function Home() {
                 ))}
               </ul>
               <Button className="btn-secondary" variant="outlined" color="inherit">
-                Add to Queue
+                {t('home.gpuCta')}
               </Button>
             </div>
           ))}
@@ -184,11 +95,11 @@ function Home() {
 
       {/* Workflow timeline */}
       <section className="section workflow">
-        <h2 className="section-title">How it works</h2>
+        <h2 className="section-title">{t('home.workflowTitle')}</h2>
         <div className="workflow-steps">
           {workflowSteps.map((step, i) => (
             <div key={i} className="workflow-step">
-              <div className="step-number">{step.number}</div>
+              <div className="step-number">{i + 1}</div>
               <h3>{step.title}</h3>
               <p className="text-muted">{step.description}</p>
             </div>
@@ -200,10 +111,9 @@ function Home() {
       <section className="section features">
         <div className="feature-layout">
           <div className="feature-text">
-            <h2 className="section-title">Built for developers and researchers</h2>
+            <h2 className="section-title">{t('home.featureSection.title')}</h2>
             <p className="text-muted">
-              No vendor lock-in, no capacity constraints. Spin up compute when you need it,
-              scale down when you don't. Full transparency on pricing and provider performance.
+              {t('home.featureSection.description')}
             </p>
           </div>
           <div className="feature-cards">
@@ -220,23 +130,23 @@ function Home() {
 
       {/* Pricing comparison */}
       <section className="section pricing">
-        <h2 className="section-title">Pricing Comparison</h2>
+        <h2 className="section-title">{t('home.pricingSection.title')}</h2>
         <table className="pricing-table">
           <thead>
             <tr>
-              <th>Offering</th>
-              <th>Specs</th>
-              <th>Price/hr</th>
-              <th>Notes</th>
+              <th>{t('home.pricingSection.columns.offering')}</th>
+              <th>{t('home.pricingSection.columns.specs')}</th>
+              <th>{t('home.pricingSection.columns.price')}</th>
+              <th>{t('home.pricingSection.columns.notes')}</th>
             </tr>
           </thead>
           <tbody>
             {pricingRows.map((row, i) => (
               <tr key={i}>
-                <td data-label="Offering">{row.offering}</td>
-                <td data-label="Specs">{row.specs}</td>
-                <td data-label="Price/hr"><strong>{row.price}</strong></td>
-                <td data-label="Notes" className="text-muted">{row.notes}</td>
+                <td data-label={t('home.pricingSection.columns.offering')}>{row.offering}</td>
+                <td data-label={t('home.pricingSection.columns.specs')}>{row.specs}</td>
+                <td data-label={t('home.pricingSection.columns.price')}><strong>{row.price}</strong></td>
+                <td data-label={t('home.pricingSection.columns.notes')} className="text-muted">{row.notes}</td>
               </tr>
             ))}
           </tbody>
@@ -245,7 +155,7 @@ function Home() {
 
       {/* Use cases */}
       <section className="section use-cases">
-        <h2 className="section-title">Use Cases</h2>
+        <h2 className="section-title">{t('home.useCases.title')}</h2>
         <div className="grid-3">
           {useCases.map((useCase, i) => (
             <div key={i} className="use-case-card">
@@ -261,20 +171,18 @@ function Home() {
       <section className="section testimonial">
         <div className="testimonial-card">
           <p className="testimonial-quote">
-            "We reduced our GPU spend by 70% while maintaining the same training throughput.
-            The distributed network gave us access to capacity we couldn't get from traditional
-            cloud providers during peak demand."
+            {testimonial.quote}
           </p>
           <div className="testimonial-author">
-            <strong>Alex Chen</strong>
-            <span className="text-muted">ML Engineering Lead, Vertex Labs</span>
+            <strong>{testimonial.author}</strong>
+            <span className="text-muted">{testimonial.role}</span>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
       <section className="section faq">
-        <h2 className="section-title">Frequently Asked Questions</h2>
+        <h2 className="section-title">{t('home.faq.title')}</h2>
         <div className="faq-list">
           {faqItems.map((item, i) => (
             <div key={i} className="faq-item">
@@ -287,12 +195,12 @@ function Home() {
 
       {/* Final CTA */}
       <section className="section final-cta">
-        <h2>Spin up distributed GPUs whenever you need them</h2>
-        <p className="text-muted">Join the waitlist to get early access and exclusive launch pricing</p>
+        <h2>{t('home.finalCta.title')}</h2>
+        <p className="text-muted">{t('home.finalCta.description')}</p>
         <div className="cta-form">
           <TextField
             type="email"
-            placeholder="your@email.com"
+            placeholder={t('home.finalCta.placeholder')}
             variant="outlined"
             fullWidth
             sx={{
@@ -318,7 +226,7 @@ function Home() {
             }}
           />
           <Button className="btn-primary" variant="contained" color="primary">
-            Join Waitlist
+            {t('home.finalCta.button')}
           </Button>
         </div>
       </section>
